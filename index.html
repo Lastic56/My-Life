@@ -135,7 +135,6 @@ button { cursor: pointer; }
     color: var(--title-color);
     display: none;
     justify-content: center;
-    align-items: center;
     z-index: 999;
 }
 .nav-close { font-size: 1.5rem; position: absolute; top: 1rem; right: 1.25rem; cursor: pointer; display: none; }
@@ -312,7 +311,7 @@ button { cursor: pointer; }
 .testimonial-date { font-size: var(--normal-font-size); margin-bottom: var(--mb2); }
 .testimonial-profile { display: flex; align-items: center; column-gap: 1rem; }
 .testimonial-profile-img { width: 60px; height: 60px; border-radius: 3rem; }
-.testimonial-profile-name { font-size: var(--h3-font-size); font-weight: var(--font-medium); color: var(--title-color); }
+.testimonial-profile-name { font-size: var(--h3-font-size); font-weight: var(--font-bold); color: var(--title-color); }
 .testimonial-profile-detail { font-size: var(--small-font-size); display: block; }
 .testimonial-profile-data { display: flex; flex-direction: column; row-gap: .4rem; }
 
@@ -409,16 +408,26 @@ textarea.input { padding: 0.8rem 1.2rem; min-height: 140px; border-radius: .5rem
 
 /* Media Queries */
 
+/* Large screens */
+@media screen and (min-width: 1600px) {
+    .container { max-width: 1400px; }
+    .home { background-position: top center; }
+}
+
+/* Medium-large screens */
 @media screen and (max-width: 1408px) {
     .container { margin-left: var(--mb25); margin-right: var(--mb25); }
+    .about-img { width: 400px; }
 }
 
 @media screen and (max-width: 1216px) {
     .about-container { column-gap: 2.5rem; }
     .about-description { padding-right: 0; }
     .work-container { grid-template-columns: repeat(2, 330px); gap: 3rem; }
+    .about-img { width: 350px; }
 }
 
+/* Tablet landscape */
 @media screen and (max-width: 1024px) {
     .container { margin-left: var(--mb15); margin-right: var(--mb15); }
     .sidebar { width: 100%; z-index: 999; transform: translateX(-100%); }
@@ -457,8 +466,9 @@ textarea.input { padding: 0.8rem 1.2rem; min-height: 140px; border-radius: .5rem
     .details-title { margin-bottom: var(--mb075); }
 }
 
+/* Tablet portrait */
 @media screen and (max-width: 768px) {
-    .about-img { width: 250px; }
+    .about-img { width: 300px; }
     .qualification-container { grid-template-columns: 290px; row-gap: 3rem; }
     .skills-container { grid-template-columns: 300px; row-gap: 3rem; }
     .work-container { grid-template-columns: 330px; }
@@ -477,9 +487,10 @@ textarea.input { padding: 0.8rem 1.2rem; min-height: 140px; border-radius: .5rem
     .portfolio-popup-inner { width: 420px; padding: 2.8rem 1.5rem 2.5rem; }
     .portfolio-popup-content { grid-template-columns: 1fr; row-gap: 1.6rem; }
     .details-title { font-size: var(--normal-font-size); }
-    .portfolio-popup-close { top: .5rem;  }
+    .portfolio-popup-close { top: .5rem; }
 }
 
+/* Mobile landscape */
 @media screen and (max-width: 576px) {
     .nav-toggle { right: initial; left: 1.5rem; }
     .home { background-image: none; height: initial; align-items: initial; padding: 7rem 0 2rem; }
@@ -499,13 +510,12 @@ textarea.input { padding: 0.8rem 1.2rem; min-height: 140px; border-radius: .5rem
 
     .work-container, .contact-container { grid-template-columns: 300px; }
 
-    .footer-container { grid-template-columns: 1fr;  }
+    .footer-container { grid-template-columns: 1fr; }
     .footer-links { justify-self: flex-start; }
 
-}
-
+/* Mobile portrait */
 @media screen and (max-width: 350px) {
-    .container { margin-left: var(--mb1); margin-left: var(--mb1); }
+    .container { margin-left: var(--mb1); margin-right: var(--mb1); }
     .home-img { width: 200px; }
     .home-title { font-size: var(--h1-font-size); }
     .home-subtitle { font-size: var(--normal-font-size); }
@@ -517,6 +527,35 @@ textarea.input { padding: 0.8rem 1.2rem; min-height: 140px; border-radius: .5rem
     .work-filters { column-gap: .25rem; }
     .services-container { grid-template-columns: max-content; }
     .services-content { padding-right: 3.5rem; }
+    
+    .testimonial-card { padding: 1.2rem 1rem; }
+    .testimonial-profile-img { width: 50px; height: 50px; }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 280px) {
+    .container { padding: 0 0.5rem; }
+    .section { padding: 4rem 0 1rem; }
+    .section-title { font-size: var(--h2-font-size); margin-bottom: var(--mb2); }
+    
+    .about-img { width: 200px; }
+    .about-info { grid-template-columns: 1fr; }
+    
+    .work-container { grid-template-columns: 1fr; }
+    .work-filters { flex-wrap: wrap; gap: 0.5rem; }
+    
+    .services-container { grid-template-columns: 1fr; }
+    
+    .contact-container { grid-template-columns: 1fr; }
+    
+    .footer-container { grid-template-columns: 1fr; }
+}
+
+/* Very large screens */
+@media screen and (min-width: 1920px) {
+    .container { max-width: 1600px; }
+    .about-img { width: 500px; }
+    .work-container { grid-template-columns: repeat(4, 330px); }
 }
 
 /* =============== user provided CSS END =============== */
@@ -581,7 +620,7 @@ textarea.input { padding: 0.8rem 1.2rem; min-height: 140px; border-radius: .5rem
   align-items:center;
   justify-content:center;
   gap:1rem;
-  margin:2rem 0;
+  margin: 2rem 0;
 }
 .float-card {
   width: 180px;
@@ -686,7 +725,165 @@ textarea.input { padding: 0.8rem 1.2rem; min-height: 140px; border-radius: .5rem
     <section class="about section" id="about">
       <h2 class="section-title" data-heading="My Intro">About me</h2>
       <div class="about-container container grid">
-ange all testimonial info names to Jack         <span class="work-item active-work" data-filter="all">All</span>
+        <div class="about-img">
+          <!-- Using the street art image provided by the user -->
+          <img src="https://z-cdn-media.chatglm.cn/files/94566f56-b85f-4e98-9622-35f502acf320.jpg?auth_key=1864961679-b3ba94fb64c94a5d9420ad413c6fa1f6-0-8eabdd5c2a417e077eee4b0189ad281f" alt="Street art with quote 'I stay high coz the world is so low - kid cudi'">
+        </div>
+        <div class="about-data">
+          <h3 class="about-heading">Hi, I'm Jaxx, Full Stack Developer</h3>
+          <p class="about-description">
+            I'm a passionate full stack developer with over 5 years of experience in creating beautiful, functional, and user-centered digital experiences. I am always looking for new and innovative ways to bring my clients' visions to life.
+          </p>
+          
+          <div class="about-info">
+            <div class="about-box">
+              <i class="uil uil-award about-icon"></i>
+              <h3 class="about-title">Experience</h3>
+              <span class="about-subtitle">5+ Years</span>
+            </div>
+            
+            <div class="about-box">
+              <i class="uil uil-briefcase-alt about-icon"></i>
+              <h3 class="about-title">Completed</h3>
+              <span class="about-subtitle">48+ Projects</span>
+            </div>
+            
+            <div class="about-box">
+              <i class="uil uil-headphones about-icon"></i>
+              <h3 class="about-title">Support</h3>
+              <span class="about-subtitle">24/7 Online</span>
+            </div>
+          </div>
+          
+          <div style="margin-top: 1.5rem;">
+            <a href="#contact" class="button">Contact Me <i class="uil uil-message button-icon"></i></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills section" id="skills">
+      <h2 class="section-title" data-heading="My abilities">Skills</h2>
+      <div class="skills-container container grid">
+        <div>
+          <div class="skills-header skills-active" data-target="#frontend">
+            <i class="uil uil-brackets-curly skills-icon"></i>
+            <div>
+              <h1 class="skills-title">Frontend Developer</h1>
+              <span class="skills-subtitle">More than 4 years</span>
+            </div>
+            <i class="uil uil-angle-down skills-arrow"></i>
+          </div>
+
+          <div class="skills-content grid" id="frontend">
+            <div class="skills-list grid">
+              <div class="skills-data">
+                <div class="skills-titles">
+                  <h3 class="skills-name">HTML</h3>
+                  <span class="skills-number">90%</span>
+                </div>
+                <div class="skills-bar">
+                  <span class="skills-percentage" style="width: 90%;"></span>
+                </div>
+              </div>
+
+              <div class="skills-data">
+                <div class="skills-titles">
+                  <h3 class="skills-name">CSS</h3>
+                  <span class="skills-number">85%</span>
+                </div>
+                <div class="skills-bar">
+                  <span class="skills-percentage" style="width: 85%;"></span>
+                </div>
+              </div>
+
+              <div class="skills-data">
+                <div class="skills-titles">
+                  <h3 class="skills-name">JavaScript</h3>
+                  <span class="skills-number">80%</span>
+                </div>
+                <div class="skills-bar">
+                  <span class="skills-percentage" style="width: 80%;"></span>
+                </div>
+              </div>
+
+              <div class="skills-data">
+                <div class="skills-titles">
+                  <h3 class="skills-name">React</h3>
+                  <span class="skills-number">75%</span>
+                </div>
+                <div class="skills-bar">
+                  <span class="skills-percentage" style="width: 75%;"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="skills-header" data-target="#backend">
+            <i class="uil uil-server skills-icon"></i>
+            <div>
+              <h1 class="skills-title">Backend Developer</h1>
+              <span class="skills-subtitle">More than 3 years</span>
+            </div>
+            <i class="uil uil-angle-down skills-arrow"></i>
+          </div>
+
+          <div class="skills-content grid" id="backend">
+            <div class="skills-list grid">
+              <div class="skills-data">
+                <div class="skills-titles">
+                  <h3 class="skills-name">Node.js</h3>
+                  <span class="skills-number">85%</span>
+                </div>
+                <div class="skills-bar">
+                  <span class="skills-percentage" style="width: 85%;"></span>
+                </div>
+              </div>
+
+              <div class="skills-data">
+                <div class="skills-titles">
+                  <h3 class="skills-name">Python</h3>
+                  <span class="skills-number">80%</span>
+                </div>
+                <div class="skills-bar">
+                  <span class="skills-percentage" style="width: 80%;"></span>
+                </div>
+              </div>
+
+              <div class="skills-data">
+                <div class="skills-titles">
+                  <h3 class="skills-name">MySQL</h3>
+                  <span class="skills-number">75%</span>
+                </div>
+                <div class="skills-bar">
+                  <span class="skills-percentage" style="width: 75%;"></span>
+                </div>
+              </div>
+
+              <div class="skills-data">
+                <div class="skills-titles">
+                  <h3 class="skills-name">MongoDB</h3>
+                  <span class="skills-number">70%</span>
+                </div>
+                <div class="skills-bar">
+                  <span class="skills-percentage" style="width: 70%;"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="work section" id="work">
+      <h2 class="section-title" data-heading="My portfolio">Recent Work</h2>
+      
+      <div class="work-filters container">
+        <span class="work-item active-work" data-filter="all">All</span>
         <span class="work-item" data-filter=".web">Web</span>
         <span class="work-item" data-filter=".app">App</span>
         <span class="work-item" data-filter=".design">Design</span>
@@ -813,14 +1010,14 @@ ange all testimonial info names to Jack         <span class="work-item active-wo
         <div class="services-content">
           <div>
             <i class="uil uil-web-grid services-icon"></i>
-            <h3 class="services-title">Web <br> Designer</h3>
+            <h3 class="services-title">Web <br> Developer</h3>
           </div>
           <span class="services-button">View More <i class="uil uil-arrow-right services-button-icon"></i></span>
 
           <div class="services-modal">
             <div class="services-modal-content">
               <i class="uil uil-times services-modal-close"></i>
-              <h3 class="services-modal-title">Web Designer</h3>
+              <h3 class="services-modal-title">Web Developer</h3>
               <p class="services-modal-description">I offer services with more than 3 years of experience with quality work to clients and companies</p>
 
               <ul class="services-modal-services grid">
@@ -907,7 +1104,7 @@ ange all testimonial info names to Jack         <span class="work-item active-wo
             <div class="testimonial-profile">
               <img src="https://i.postimg.cc/MTr9j4Yn/client1.jpg" alt="" class="testimonial-profile-img">
               <div class="testimonial-profile-data">
-                <span class="testimonial-profile-name">Chen Xiuying</span>
+                <span class="testimonial-profile-name">Jack</span>
                 <span class="testimonail-profile-detail">Marketing Director</span>
               </div>
             </div>
@@ -920,7 +1117,7 @@ ange all testimonial info names to Jack         <span class="work-item active-wo
             <div class="testimonial-profile">
               <img src="https://i.postimg.cc/wvV7f8rB/client2.jpg" alt="" class="testimonial-profile-img">
               <div class="testimonial-profile-data">
-                <span class="testimonial-profile-name">Joshua Middletown</span>
+                <span class="testimonial-profile-name">Jack</span>
                 <span class="testimonail-profile-detail">Sales Director</span>
               </div>
             </div>
@@ -933,7 +1130,7 @@ ange all testimonial info names to Jack         <span class="work-item active-wo
             <div class="testimonial-profile">
               <img src="https://i.postimg.cc/pdP9DL0S/client3.jpg" alt="" class="testimonial-profile-img">
               <div class="testimonial-profile-data">
-                <span class="testimonial-profile-name">Melanie Stone</span>
+                <span class="testimonial-profile-name">Jack</span>
                 <span class="testimonail-profile-detail">Business Owner</span>
               </div>
             </div>
@@ -942,12 +1139,6 @@ ange all testimonial info names to Jack         <span class="work-item active-wo
         <div class="swiper-pagination"></div>
       </div>
     </section>
-
-    <!-- ANIMATION BLOCK 3 (above contact) -->
-    <div class="animation-block">
-      <canvas id="sparkle-canvas" style="position:absolute; inset:0; z-index:0;"></canvas>
-      <div class="title">Tiny sparkles — subtle motion to lead into contact</div>
-    </div>
 
     <!-- CONTACT -->
     <section class="contact section" id="contact">
@@ -1212,7 +1403,7 @@ if(navToggle) {
     navToggle.addEventListener('click', () => { navMenu.classList.add('show-sidebar'); })
 }
 if(navClose) {
-    navClose.addEventListener('click', () => { navMenu.classList.remove('show-sidebar'); })
+    navClose.addEventListener('click', () => { navMenu.classList.remove('show-sidebar'); }
 }
 
 /* ========== Simple particle animation for Block 1 ========== */
@@ -1275,40 +1466,7 @@ if(navClose) {
       c.style.transform = `translateY(${offset}px)`;
     });
     requestAnimationFrame(animate);
-  }
-  animate();
-})();
-
-/* ========== Sparkle canvas for Block 3 ========== */
-(function() {
-  const canvas = document.getElementById('sparkle-canvas');
-  if(!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let w, h, sparks=[];
-
-  function resize(){ w = canvas.width = canvas.offsetWidth; h = canvas.height = canvas.offsetHeight; }
-  window.addEventListener('resize', resize);
-  resize();
-
-  function rand(min,max){ return Math.random()*(max-min)+min; }
-  for(let i=0;i<45;i++){
-    sparks.push({x:rand(0,w), y:rand(0,h), r: rand(0.5,1.6), alpha: rand(.05,.4), vy: rand(.1,.6)});
-  }
-
-  function render(){
-    ctx.clearRect(0,0,w,h);
-    for(const s of sparks){
-      ctx.beginPath();
-      ctx.fillStyle = `rgba(255,255,255,${s.alpha})`;
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
-      ctx.fill();
-      s.y -= s.vy;
-      if(s.y < -10){ s.y = h + 10; s.x = rand(0,w); }
-    }
-    requestAnimationFrame(render);
-  }
-  render();
-})();
+  })();
 
 /* ========== Hero video fallback behavior ========== */
 const heroVid = document.getElementById('hero-video');
@@ -1326,5 +1484,6 @@ document.querySelectorAll('.work-button, .services-button, .button, .contact-but
   el.setAttribute('tabindex','0');
 });
   </script>
+</head>
 </body>
 </html>
